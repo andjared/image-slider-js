@@ -5,16 +5,15 @@
 }
 
 .container {
-  /* width: 100vw; */
+  width: 100vw;
   min-height: 100vh;
-  padding: 0 2em;
   display: grid;
   background-color: azure;
   place-items: center;
 }
 
 .slider {
-  width: 50vw;
+  width: 80vw;
   max-width: 60rem;
   height: 40vh;
   margin: 0 auto;
@@ -25,16 +24,16 @@
 .prev,
 .next {
   position: absolute;
-  top: 55%;
+  top: 50%;
   z-index: 1;
 }
 
 .prev {
-  left: 10px;
+  left: 0.7em;
 }
 
 .next {
-  right: 10px;
+  right: 0.7em;
 }
 
 .slider button {
@@ -47,6 +46,11 @@
   font-size: 24px;
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.slider button:hover {
+  color: chocolate;
 }
 
 .slide {
@@ -63,4 +67,39 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.slide-number {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  z-index: 1;
+}
+
+.slide-number span {
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 0.375em 0.7em;
+  background-color: rgb(239, 249, 242);
+  color: chocolate;
+}
+
+@media screen and (min-width: 576px) {
+  .slider {
+    height: 45vh;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .slider {
+    height: 55vh;
+    width: 60vw;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .slider {
+    height: 65vh;
+  }
 }
