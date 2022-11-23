@@ -6,6 +6,8 @@ const slides = document.querySelectorAll(".slide");
 
 const order = document.querySelector(".slide-order");
 
+const thumbnails = document.querySelectorAll(".thumbnail");
+
 slides.forEach((slide, index) => {
   slide.style.left = `${index * 100}%`;
 });
@@ -25,6 +27,11 @@ const slider = () => {
   slides.forEach(
     (slide) => (slide.style.transform = `translateX(-${counter * 100}%)`)
   );
+
+  thumbnails.forEach((thumbnail) => thumbnail.classList.remove("active"));
+
+  const activeThumbnail = document.getElementById(`${counter.toString()}`);
+  activeThumbnail.classList.add("active");
 };
 
 prevBtn.addEventListener("click", () => {
@@ -35,4 +42,11 @@ prevBtn.addEventListener("click", () => {
 nextBtn.addEventListener("click", () => {
   counter++;
   slider();
+});
+
+thumbnails.forEach((thumbnail, index) => {
+  thumbnail.addEventListener("click", () => {
+    counter = index;
+    slider();
+  });
 });
