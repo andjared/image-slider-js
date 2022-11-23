@@ -27,6 +27,11 @@ const slider = () => {
   slides.forEach(
     (slide) => (slide.style.transform = `translateX(-${counter * 100}%)`)
   );
+
+  thumbnails.forEach((thumbnail) => thumbnail.classList.remove("active"));
+
+  const activeThumbnail = document.getElementById(`${counter.toString()}`);
+  activeThumbnail.classList.add("active");
 };
 
 prevBtn.addEventListener("click", () => {
