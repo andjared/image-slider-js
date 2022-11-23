@@ -20,7 +20,7 @@ const slider = () => {
     counter = slides.length - 1;
   }
 
-  order.textContent = `${counter + 1} / 6`;
+  order.textContent = `${counter + 1} / ${slides.length}`;
 
   slides.forEach(
     (slide) => (slide.style.transform = `translateX(-${counter * 100}%)`)
